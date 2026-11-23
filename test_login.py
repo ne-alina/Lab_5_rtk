@@ -23,6 +23,9 @@ def test_successful_login(page: Page):
     expect(
         page.locator('[data-test="inventory-container"]')
     ).to_be_visible()
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/incorrect.html"
+    )
 
 def test_add_product_to_cart(page: Page):
     page.goto("https://www.saucedemo.com/")
